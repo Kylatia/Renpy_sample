@@ -1,10 +1,10 @@
 label chores:
     # Checking to see if the player has died yet.
-    if player.sickness_level == 0
+    if player.sickness_level == 0:
         MC "Oh I feel like I'm coming down with something."
         $ player.sickness_level += 1
 
-    # Let's start the daily choice menu. 
+    # Let's start the daily choice menu.
     menu :
         "What do you want to do?"
         "Hang out with Brad":

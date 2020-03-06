@@ -1,7 +1,10 @@
-# Just Dylan and Brad are pretty much the same..
+#Dylan and Brad are pretty much the same.
 
 label hang_with_dylan:
-    MC "Dylan is just so dreamy."
+    if player.love_dylan == 0:
+        MC "Dylan is just so dreamy."
+    else:
+        MC "I just love spending time with Dylan."
     if player.sickness_level >= 3:
         MC "And it's not just the feaver talking."
 
@@ -13,7 +16,7 @@ label hang_with_dylan:
         MC "Oh I love story stuff."
     # We spent time with him before so we're going to spend more time.
 
-    if player.love_dylann == 1:
+    if player.love_dylan == 1:
         Dylan "Oh man [name], I'm happy to see you."
         MC "I just love spending time with you."
 
@@ -44,13 +47,14 @@ label hang_with_dylan:
     $ player.sickness_level += 1
 
     jump cycle_body # end of day let's go back to the main script.
-
+#-------------------------------------------------------------------------------
 label dylan_sick_happy_ending:
     MC "I'm so happy I can spend my final hours with you, Dylan."
     Dylan "I'm glad to be with you too.  So I'm on the life insurnce policy right?"
     MC "Of course."
     # fin
     return
+#-------------------------------------------------------------------------------
 label dylan_well_happy_ending:
     MC "I love you so much we're ging to go live happily ever after."
     Dylan "Of course."
